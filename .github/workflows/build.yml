@@ -1,10 +1,8 @@
+name: Windows packager
 on: 
     push:
-        branches: ["main"]
     pull_request:
-        branches: ["main"]
     workflow_dispatch:
-
 jobs:
     build:
         runs-on: windows-latest
@@ -20,7 +18,7 @@ jobs:
             - run: mvn package
             - run: mkdir target/libs && cp target/calc-0.1-jar-with-dependencies.jar target/libs
             - run: jlink --add-modules java.base,java.desktop --output target/custom-jre
-            - run: jpackage -t app-image -i target/libs --main-jar calc-0.1-jar-with-dependencies.jar --runtime-image target/custom-jre --dest target/output -n SwingCalc
+            - run: jpackage -t app-image -i target/libs --main-jar calc-0.1-jar-with-dependencies.jar --runtime-image target/custom-jre --dest target/output -n Calculator
             - uses: actions/upload-artifact@v4
               with:
                 name: packaging
