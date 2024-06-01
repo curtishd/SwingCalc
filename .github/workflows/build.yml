@@ -7,10 +7,7 @@ on:
 
 jobs:
     build:
-        runs-on: ${{ matrix.os }}
-        strategy:
-            matrix:
-                os: [ windows-latest ]
+        runs-on: windows-latest
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-java@v4
@@ -21,8 +18,15 @@ jobs:
                 cache-dependency-path: 'pom.xml'
               name: Build with Maven
             - run: mvn package
-            - run: mkdir staging && cp target/*.jar staging
+            - run: mkdir target/libs && cp target/calc-0.1-jar-with-dependencies.jar target/libs
+            - run: jlink --add-modules java.base,java.desktop --output target/custom-jre
+            - run: jpackage -t app-image --input target/libs --main-jar calc-0.1-jar-with-dependencies.jar --runtime-image target/custom-jre --dest target/output
             - uses: actions/upload-artifact@v4
               with:
-                name: package
-                path: staging
+                name: packaging
+                path: target/output
+            # - run: mkdir staging && cp target/*.jar staging
+            # - uses: actions/upload-artifact@v4
+            #   with:
+            #     name: package
+            #     path: staging
