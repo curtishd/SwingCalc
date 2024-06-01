@@ -21,5 +21,8 @@ jobs:
                 cache-dependency-path: 'pom.xml'
               name: Build with Maven
             - run: mvn package
-            
-              
+            - run: mkdir staging && cp target\*.jar staging
+            - uses: actions/upload-artifact@4
+              with:
+                name: package
+                path: staging
