@@ -16,7 +16,7 @@ jobs:
             - uses: actions/setup-java@v4
               with: 
                 distribution: 'corretto'
-                java-version: '21.0.3'
+                java-version: '21'
                 cache: 'maven'
                 cache-dependency-path: 'calc/pom.xml'
               name: Build with Maven
