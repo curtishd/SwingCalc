@@ -7,7 +7,8 @@ import static org.cdh.ui.CalculatorUI.inputScreen;
 import java.util.regex.Pattern;
 
 public interface NumberButtonAction {
-    static void buttonActionSetup(String num) {
+    static void buttonActionSetup(int number) {
+       String num = String.valueOf(number);
         if (addToDisplay) {
             if (Pattern.matches("[0]*", inputScreen.getText())) {
                 inputScreen.setText(num);

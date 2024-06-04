@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 
+import org.cdh.ui.TrigonometriButtonAction.MathAction;
+
 import static org.cdh.ui.CalculatorUI.inputScreen;
 import static org.cdh.ui.CalculatorUI.flag;
 import static org.cdh.ui.CalculatorUI.typedValue;
@@ -22,68 +24,68 @@ public enum Controller implements ActionListener {
     BUTTON_0() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("0");
+            NumberButtonAction.buttonActionSetup(0);
         }
     },
     BUTTON_1() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("1");
+            NumberButtonAction.buttonActionSetup(1);
         }
     },
     BUTTON_2() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("2");
+            NumberButtonAction.buttonActionSetup(2);
 
         }
     },
     BUTTON_3() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("3");
+            NumberButtonAction.buttonActionSetup(3);
 
         }
     },
     BUTTON_4() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("4");
+            NumberButtonAction.buttonActionSetup(4);
 
         }
     },
     BUTTON_5() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("5");
+            NumberButtonAction.buttonActionSetup(5);
 
         }
     },
     BUTTON_6() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("6");
+            NumberButtonAction.buttonActionSetup(6);
 
         }
     },
     BUTTON_7() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("7");
+            NumberButtonAction.buttonActionSetup(7);
 
         }
     },
     BUTTON_8() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("8");
+            NumberButtonAction.buttonActionSetup(8);
 
         }
     },
     BUTTON_9() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            NumberButtonAction.buttonActionSetup("9");
+            NumberButtonAction.buttonActionSetup(9);
 
         }
     },
@@ -96,7 +98,7 @@ public enum Controller implements ActionListener {
     BUTTON_ROOT() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            TrigonometriButtonAction.buttonActionSetup("sqrt");
+            TrigonometriButtonAction.buttonActionSetup(MathAction.SQRT);
         }
     },
     BUTTON_EQUAL() {
@@ -178,28 +180,28 @@ public enum Controller implements ActionListener {
     BUTTON_SIN() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            TrigonometriButtonAction.buttonActionSetup("sin");
+            TrigonometriButtonAction.buttonActionSetup(MathAction.SIN);
 
         }
     },
     BUTTON_COS() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            TrigonometriButtonAction.buttonActionSetup("cos");
+            TrigonometriButtonAction.buttonActionSetup(MathAction.COS);
 
         }
     },
     BUTTON_TAN() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            TrigonometriButtonAction.buttonActionSetup("tan");
+            TrigonometriButtonAction.buttonActionSetup(MathAction.TAN);
 
         }
     },
     BUTTON_TANH() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            TrigonometriButtonAction.buttonActionSetup("tanh");
+            TrigonometriButtonAction.buttonActionSetup(MathAction.TANH);
 
         }
     },

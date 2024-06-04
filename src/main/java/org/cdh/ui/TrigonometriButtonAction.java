@@ -10,24 +10,27 @@ import static org.cdh.ui.CalculatorUI.typedValue;
 import java.util.regex.Pattern;
 
 public interface TrigonometriButtonAction {
-    static void buttonActionSetup(String trigonometri) {
+    public enum MathAction {
+        SIN,COS,TAN,TANH,SQRT
+    }
+    static void buttonActionSetup(MathAction trigonometri) {
         if (!Pattern.matches(REGEX, inputScreen.getText()))
             return;
         if (flag) {
             switch (trigonometri) {
-                case "sin" -> {
+                case SIN-> {
                     typedValue = Math.sin(Double.parseDouble(inputScreen.getText()));
                 }
-                case "cos" -> {
+                case COS -> {
                     typedValue = Math.cos(Double.parseDouble(inputScreen.getText()));
                 }
-                case "tan" ->{
+                case TAN ->{
                     typedValue = Math.tan(Double.parseDouble(inputScreen.getText()));
                 }
-                case "tanh" ->{
+                case TANH ->{
                     typedValue = Math.tanh(Double.parseDouble(inputScreen.getText()));
                 }
-                case "sqrt" -> {
+                case SQRT -> {
                     typedValue = Math.sqrt(Double.parseDouble(inputScreen.getText()));
                 }
                 default ->{
